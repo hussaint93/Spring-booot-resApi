@@ -54,7 +54,11 @@ public class UserController {
 	
 	@PutMapping
 	private void updateUser(@RequestBody User user) {
-		userservice.save(user);
+		try {
+			userservice.save(user);
+		} catch (Exception e) {
+			logger.error(e.getCause().toString());
+		}
 		System.out.println(user.getFirstName());
 	}
 	
