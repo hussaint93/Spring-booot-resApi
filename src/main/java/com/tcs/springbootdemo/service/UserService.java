@@ -38,7 +38,6 @@ public class UserService  implements IUserService{
 		}
 		return user;
 	}
-
 	@Override
 	public void deletUser(Integer id) {
 		Optional<User> user =  userRerpository.findById(id);
@@ -49,3 +48,7 @@ public class UserService  implements IUserService{
 	}
 
 }
+/*
+  mvn sonar:sonar   -Dsonar.projectKey=user-management   -Dsonar.host.url=http://localhost:9000   -Dsonar.login=2497e49f33075019ff7ece8b43d220e931a684af
+*/	
+

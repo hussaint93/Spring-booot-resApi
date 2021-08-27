@@ -24,4 +24,10 @@ public class User {
 	@NotBlank
 	private String firstName;
 
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", email=" + email + ", firstName=" + firstName + "]";
+	}
+
+	
 }
