@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tcs.springbootdemo.entity.User;
@@ -42,12 +43,9 @@ public class UserController {
 			return userservice.getUser(id);
 		}
 	@PostMapping
+	@ResponseStatus(code = HttpStatus.CREATED)
 	private void saveUser(@RequestBody @Valid User user) {
-		try {
 			userservice.save(user);
-		} catch (Exception e) {
-			logger.error(e.getCause().toString());
-		}
 		logger.debug(user.getFirstName());
 	}
 	

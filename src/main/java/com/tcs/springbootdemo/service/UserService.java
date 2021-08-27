@@ -19,10 +19,9 @@ public class UserService  implements IUserService{
 	@Override
 	@Transactional(rollbackFor = Exception.class,
 	noRollbackFor = IllegalStateException.class)
-	public void save(User user) throws Exception{
+	public void save(User user){
 		userRerpository.save(user);
-		System.out.println("saved");
-		throw new IllegalStateException();
+		//used exceptions to see how transactional works when a exception is thrown 
 	}
 
 	@Override
