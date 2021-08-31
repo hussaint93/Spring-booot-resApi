@@ -24,7 +24,7 @@ public class JavaClient {
 				  .web(WebApplicationType.NONE)
 				  .run(args);
 		//getUserById(context);
-		//Iterable<User> response = (Iterable<User>)resTemplate.getForObject(URL, User.class);
+		
 		getAllUser(context);
 		
 	}
